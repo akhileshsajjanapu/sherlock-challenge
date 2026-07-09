@@ -161,4 +161,3 @@ sherlock-candidate-id/
 
 ## License
 
-MIT
