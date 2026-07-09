@@ -164,5 +164,29 @@ sherlock-candidate-id/
 5. **Multi-meeting context** — if same candidate had prior interviews, use history
 6. **Production hardening** — metrics, alerting, A/B testing framework
 
-## License
+## 📸 Screenshots
+
+### Dashboard
+
+![Dashboard](assets/dashboard.png)
+
+### Candidate Identification
+
+![Candidate Identification](assets/candidate-identification.png)
+
+### Confidence Timeline
+
+![Confidence Timeline](assets/confidence-timeline.png)
+
+### API Response
+
+![API Response](assets/api-response.png)
+
+### Architecture
+
+![Architecture](assets/architecture.png)
+
+### Demo Scenarios
+
+![Demo Scenarios](assets/demo-scenarios.png)
 
