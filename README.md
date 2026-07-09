@@ -9,7 +9,7 @@ Built for the [Sherlock Internship Challenge](https://sherlock.sh).
 🎥 **Demo Video:** [▶️ Watch the Demo](demo/reco.mov)
 
 ---
-## Problem
+## Problem 
 
 Sherlock's fraud detectors must analyze the **candidate's** audio and video — not the interviewer or observers. But candidates often join with wrong names, device names ("MacBook Pro"), nicknames, or change names mid-interview. Interviewers may enter incorrect metadata. Multiple participants create ambiguity.
 
