@@ -4,6 +4,11 @@ Real-time AI system that automatically identifies the interview candidate during
 
 Built for the [Sherlock Internship Challenge](https://sherlock.sh).
 
+# Sherlock Candidate Identifier
+
+🎥 **Demo Video:** [▶️ Watch the Demo](demo/reco.mov)
+
+---
 ## Problem
 
 Sherlock's fraud detectors must analyze the **candidate's** audio and video — not the interviewer or observers. But candidates often join with wrong names, device names ("MacBook Pro"), nicknames, or change names mid-interview. Interviewers may enter incorrect metadata. Multiple participants create ambiguity.
