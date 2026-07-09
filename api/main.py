@@ -6,10 +6,12 @@ import asyncio
 import json
 from contextlib import asynccontextmanager
 from datetime import datetime
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from sherlock.engine import CandidateIdentificationEngine
@@ -122,6 +124,51 @@ async def timeline(meeting_id: str):
     return engine.get_confidence_timeline()
 
 
+@app.get("/api/scenarios")
+async def list_scenarios():
+    scenarios_dir = Path(__file__).resolve().parent.parent / "demo" / "scenarios"
+    if not scenarios_dir.exists():
+        return []
+    
+    scenarios = []
+    for path in sorted(scenarios_dir.glob("*.json")):
+        try:
+            with open(path) as f:
+                data = json.load(f)
+                scenarios.append({
+                    "filename": path.name,
+                    "name": data.get("name", path.stem),
+                    "description": data.get("description", ""),
+                    "expected_candidate_id": data.get("expected_candidate_id", ""),
+                    "metadata": data.get("metadata", {})
+                })
+        except Exception:
+            pass
+    return scenarios
+
+
+@app.get("/api/scenarios/{filename}")
+async def get_scenario(filename: str):
+    scenarios_dir = Path(__file__).resolve().parent.parent / "demo" / "scenarios"
+    path = scenarios_dir / filename
+    try:
+        resolved_path = path.resolve()
+        resolved_dir = scenarios_dir.resolve()
+        if not str(resolved_path).startswith(str(resolved_dir)):
+            raise HTTPException(status_code=403, detail="Access denied")
+    except Exception:
+        raise HTTPException(status_code=403, detail="Access denied")
+        
+    if not path.exists() or not path.is_file():
+        raise HTTPException(status_code=404, detail="Scenario not found")
+        
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.websocket("/ws/{meeting_id}")
 async def websocket_endpoint(websocket: WebSocket, meeting_id: str):
     await websocket.accept()
@@ -164,3 +211,6 @@ async def websocket_endpoint(websocket: WebSocket, meeting_id: str):
 
     except WebSocketDisconnect:
         pass
+
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
