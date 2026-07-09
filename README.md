@@ -166,27 +166,26 @@ sherlock-candidate-id/
 
 ## 📸 Screenshots
 
-### Dashboard
+### Screenshot 1
 
-![Dashboard](assets/dashboard.png)
+![Screenshot 1](assets/photo-1.png)
 
-### Candidate Identification
+### Screenshot 2
 
-![Candidate Identification](assets/candidate-identification.png)
+![Screenshot 2](assets/photo-2.png)
 
-### Confidence Timeline
+### Screenshot 3
 
-![Confidence Timeline](assets/confidence-timeline.png)
+![Screenshot 3](assets/photo-3.png)
 
-### API Response
+### Screenshot 4
 
-![API Response](assets/api-response.png)
+![Screenshot 4](assets/photo-4.png)
 
-### Architecture
+### Screenshot 5
 
-![Architecture](assets/architecture.png)
+![Screenshot 5](assets/photo-5.png)
 
-### Demo Scenarios
+### Screenshot 6
 
-![Demo Scenarios](assets/demo-scenarios.png)
-
+![Screenshot 6](assets/photo-6.png)
