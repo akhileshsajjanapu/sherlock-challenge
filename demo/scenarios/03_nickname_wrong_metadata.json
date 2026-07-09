@@ -1,0 +1,23 @@
+{
+  "name": "Nickname + Wrong Metadata Name",
+  "description": "Interviewer entered wrong candidate name; candidate uses nickname",
+  "expected_candidate_id": "p2",
+  "metadata": {
+    "candidate_name": "Jonathan Smith",
+    "candidate_email": "jsmith@email.com",
+    "interviewer_names": ["Mike Torres"],
+    "calendar_title": "Interview - Jonathan Smith"
+  },
+  "events": [
+    {"delay_ms": 0, "event_type": "join", "participant_id": "p1", "payload": {"display_name": "Mike Torres", "webcam_on": true}},
+    {"delay_ms": 2000, "event_type": "join", "participant_id": "p2", "payload": {"display_name": "Jon", "webcam_on": true}},
+    {"delay_ms": 3500, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 6}},
+    {"delay_ms": 4000, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "Hi Jon, I'm Mike. Could you explain your experience with machine learning?"}},
+    {"delay_ms": 4500, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 40}},
+    {"delay_ms": 5000, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "Absolutely. I worked on NLP models at my previous company. I built a sentiment analysis pipeline that processed customer feedback in real time."}},
+    {"delay_ms": 7500, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 5}},
+    {"delay_ms": 8000, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "What is your approach to model evaluation?"}},
+    {"delay_ms": 8500, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 35}},
+    {"delay_ms": 9000, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "My approach involves cross-validation with stratified sampling. I believe in using both precision-recall curves and confusion matrices to understand model behavior."}}
+  ]
+}

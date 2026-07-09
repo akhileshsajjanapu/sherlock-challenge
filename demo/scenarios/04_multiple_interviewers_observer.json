@@ -1,0 +1,25 @@
+{
+  "name": "Multiple Interviewers + Silent Observer",
+  "description": "Two interviewers, one candidate, one silent observer",
+  "expected_candidate_id": "p3",
+  "metadata": {
+    "candidate_name": "Ananya Patel",
+    "candidate_email": "ananya.p@university.edu",
+    "interviewer_names": ["David Kim", "Lisa Wong"],
+    "calendar_title": "Final Round - Ananya Patel"
+  },
+  "events": [
+    {"delay_ms": 0, "event_type": "join", "participant_id": "p1", "payload": {"display_name": "David Kim", "webcam_on": true}},
+    {"delay_ms": 300, "event_type": "join", "participant_id": "p2", "payload": {"display_name": "Lisa Wong", "webcam_on": true}},
+    {"delay_ms": 500, "event_type": "join", "participant_id": "p4", "payload": {"display_name": "HR Observer", "webcam_on": false}},
+    {"delay_ms": 2500, "event_type": "join", "participant_id": "p3", "payload": {"display_name": "Ananya Patel", "webcam_on": true}},
+    {"delay_ms": 4000, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 7}},
+    {"delay_ms": 4500, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "Welcome Ananya. Let's start with a system design question. How would you design a URL shortener?"}},
+    {"delay_ms": 5000, "event_type": "speaking_stop", "participant_id": "p3", "payload": {"duration_seconds": 90}},
+    {"delay_ms": 5500, "event_type": "transcript", "participant_id": "p3", "payload": {"text": "I'd start with the requirements — read-heavy, low latency. My experience building high-traffic APIs tells me we need a hash function for encoding, a key-value store like DynamoDB, and a cache layer with Redis."}},
+    {"delay_ms": 10000, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 5}},
+    {"delay_ms": 10500, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "Good start. Can you explain how you'd handle collisions?"}},
+    {"delay_ms": 11000, "event_type": "speaking_stop", "participant_id": "p3", "payload": {"duration_seconds": 40}},
+    {"delay_ms": 11500, "event_type": "transcript", "participant_id": "p3", "payload": {"text": "When I was working on a similar project, we used base62 encoding with a counter-based approach and retry logic for collision handling."}}
+  ]
+}

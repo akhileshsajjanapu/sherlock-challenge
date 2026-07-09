@@ -1,0 +1,24 @@
+{
+  "name": "Normal Interview",
+  "description": "Candidate joins with correct name, standard Q&A flow",
+  "expected_candidate_id": "p3",
+  "metadata": {
+    "candidate_name": "Priya Sharma",
+    "candidate_email": "priya.sharma@gmail.com",
+    "interviewer_names": ["Alex Chen", "Jordan Lee"],
+    "calendar_title": "Technical Interview - Priya Sharma"
+  },
+  "events": [
+    {"delay_ms": 0, "event_type": "join", "participant_id": "p1", "payload": {"display_name": "Alex Chen", "webcam_on": true}},
+    {"delay_ms": 500, "event_type": "join", "participant_id": "p2", "payload": {"display_name": "Jordan Lee", "webcam_on": true}},
+    {"delay_ms": 2000, "event_type": "join", "participant_id": "p3", "payload": {"display_name": "Priya Sharma", "webcam_on": true}},
+    {"delay_ms": 3000, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 8}},
+    {"delay_ms": 3500, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "Hi Priya, thanks for joining. Can you tell me about your experience with distributed systems?"}},
+    {"delay_ms": 4000, "event_type": "speaking_stop", "participant_id": "p3", "payload": {"duration_seconds": 45}},
+    {"delay_ms": 4500, "event_type": "transcript", "participant_id": "p3", "payload": {"text": "Sure! In my previous role at a fintech startup, I worked on building a distributed payment processing system. I implemented event sourcing with Kafka and designed the microservices architecture."}},
+    {"delay_ms": 8000, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 6}},
+    {"delay_ms": 8500, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "Walk me through how you would design a rate limiter."}},
+    {"delay_ms": 9000, "event_type": "speaking_stop", "participant_id": "p3", "payload": {"duration_seconds": 60}},
+    {"delay_ms": 9500, "event_type": "transcript", "participant_id": "p3", "payload": {"text": "I would approach this using a token bucket algorithm. When I was at my last company, we implemented this in Redis with sliding window counters for our API gateway."}}
+  ]
+}

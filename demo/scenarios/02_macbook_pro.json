@@ -1,0 +1,23 @@
+{
+  "name": "MacBook Pro Display Name",
+  "description": "Candidate joins as generic device name — must identify via behavior",
+  "expected_candidate_id": "p2",
+  "metadata": {
+    "candidate_name": "Rahul Mehta",
+    "candidate_email": "rahul.mehta@outlook.com",
+    "interviewer_names": ["Sarah Williams"],
+    "calendar_title": "Interview - Rahul Mehta"
+  },
+  "events": [
+    {"delay_ms": 0, "event_type": "join", "participant_id": "p1", "payload": {"display_name": "Sarah Williams", "webcam_on": true}},
+    {"delay_ms": 1500, "event_type": "join", "participant_id": "p2", "payload": {"display_name": "MacBook Pro", "webcam_on": true}},
+    {"delay_ms": 3000, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 5}},
+    {"delay_ms": 3500, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "Hello, welcome to the interview. Tell us about your background."}},
+    {"delay_ms": 4000, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 50}},
+    {"delay_ms": 4500, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "Thank you for having me. I have 4 years of experience in backend development. In my current role, I built a real-time analytics pipeline processing 2 million events per second."}},
+    {"delay_ms": 7000, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 4}},
+    {"delay_ms": 7500, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "How would you handle data consistency in a distributed system?"}},
+    {"delay_ms": 8000, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 55}},
+    {"delay_ms": 8500, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "I would use a combination of eventual consistency with conflict-free replicated data types. At my last company, we implemented saga patterns for cross-service transactions."}}
+  ]
+}

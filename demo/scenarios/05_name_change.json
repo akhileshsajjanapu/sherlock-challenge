@@ -1,0 +1,24 @@
+{
+  "name": "Display Name Change Mid-Interview",
+  "description": "Candidate changes display name during the interview",
+  "expected_candidate_id": "p2",
+  "metadata": {
+    "candidate_name": "Carlos Mendez",
+    "candidate_email": "carlos.mendez@proton.me",
+    "interviewer_names": ["Emma Roberts"],
+    "calendar_title": "Interview - Carlos Mendez"
+  },
+  "events": [
+    {"delay_ms": 0, "event_type": "join", "participant_id": "p1", "payload": {"display_name": "Emma Roberts", "webcam_on": true}},
+    {"delay_ms": 1000, "event_type": "join", "participant_id": "p2", "payload": {"display_name": "iPhone", "webcam_on": true}},
+    {"delay_ms": 3000, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 5}},
+    {"delay_ms": 3500, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "Hi there, thanks for joining. Can you tell me about yourself?"}},
+    {"delay_ms": 4000, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 30}},
+    {"delay_ms": 4500, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "Hi Emma, I'm Carlos. I have 3 years of experience in mobile development. I built several iOS apps with SwiftUI."}},
+    {"delay_ms": 6000, "event_type": "display_name_change", "participant_id": "p2", "payload": {"new_name": "Carlos Mendez"}},
+    {"delay_ms": 7000, "event_type": "speaking_stop", "participant_id": "p1", "payload": {"duration_seconds": 4}},
+    {"delay_ms": 7500, "event_type": "transcript", "participant_id": "p1", "payload": {"text": "Describe a challenging bug you fixed recently."}},
+    {"delay_ms": 8000, "event_type": "speaking_stop", "participant_id": "p2", "payload": {"duration_seconds": 45}},
+    {"delay_ms": 8500, "event_type": "transcript", "participant_id": "p2", "payload": {"text": "In my previous role, I tracked down a memory leak in our Core Data stack. I used Instruments to profile and found retain cycles in our view model layer."}}
+  ]
+}
